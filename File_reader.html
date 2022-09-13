@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>File reader</title>
+</head>
+<body>
+	<input type="file" multiple="" onchange="upfiles(this.files)">
+	<div id="message"></div>
+
+	<script type="text/javascript">
+		var message = document.getElementById("message");
+		if(window.FileReader){
+			message.innerHTML = "File reader is available";
+		}else{
+			message.innerHTML = "File reader is available";
+		}
+		function upfiles(files){
+			for(var x = 0;x < (files.length); x++){
+				var freader = new FileReader();
+				freader.onload = function(e){
+					console.log(e.target);
+				}
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Valid Input</title>
+	<style type="text/css">
+		#output{
+			color: red;
+		}
+		#email, #phoneno, #name{
+			transition: width 10s;
+		}
+		#email:hover, #phoneno:hover, #name:hover{
+			width: 25%;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<input type="text" id="email" placeholder="email id">
+		<input type="text" id="phoneno" placeholder="phone number">
+		<input type="text" id="name" placeholder="name">
+		<button value="submit" onclick="validate_form()">Click Me</button>
+	</div>
+	<div id="output">
+		
+	</div>
+	<script type="text/javascript">
+		var output = document.getElementById("output");
+		function validate_form(){
+			output.innerHTML = "";
+			var em = document.getElementById("email").value;
+			var ph = document.getElementById("phoneno").value;
+			var na = document.getElementById("name").value;
+			console.log(em);
+			var cem = /[A-Za-z0-9_-]+@[A-Za-z0-9_-]+\.[A-Za-z]/;
+			var cph = /[0-9]+$/;
+			var cna = /[A-Za-z]/;
+			if(!em.match(cem)){
+				document.getElementById("email").focus();
+				output.innerHTML += " Invalid Email Id<br>";
+			}
+			if((!ph.match(cph)) || (ph.length != 10)){
+				console.log(ph.length);
+				output.innerHTML += " Invalid Phone Number<br>";
+				document.getElementById("phoneno").focus();
+				
+			}
+			if(!na.match(cna)){
+				document.getElementById("name").focus();
+				output.innerHTML += " Invalid Name<br>";
+			}
+		}
+	</script>
+</body>
+</html>

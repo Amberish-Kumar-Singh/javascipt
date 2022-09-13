@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>pop up</title>
+	<style type="text/css">
+		#policy_div{
+			height: 75%;
+			width: 75%;
+			background-color: powderblue;
+			margin: auto;
+		}
+		#policy_div{
+			visibility: hidden;
+		}
+			
+	</style>
+</head>
+<body>
+	<button id="popup">pop up window</button>
+	<div id="policy_div">
+		<p id="policy">
+			By clicking on <mark>OK</mark> you agree to our terms of policy else if you click on <mark>Cancel</mark> you will not be able to proceed to do transaction further.<br/><br/><br/>
+			<button onclick="confirm()">OK</button>
+			<button onclick="document.getElementById('policy_div').style.visibility='hidden'">Cancel</button>
+		</p>		
+	</div>
+	<script type="text/javascript">
+		el=document.getElementById('popup');
+		fn = document.getElementById("policy_div");
+		el.onclick=function(){
+			fn.style.visibility = (fn.style.visibility == "hidden" ? "visible" : "hidden");
+		}
+		function confirm(){
+			window.location="confirm_submission.html"
+		}
+	</script>
+</body>
+</html>

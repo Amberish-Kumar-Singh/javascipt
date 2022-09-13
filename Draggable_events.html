@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Draggable</title>
+	<style type="text/css">
+		.box{
+			height: 10em;
+			width: 10em;
+			margin-left: 5rem;
+			padding:2rem;
+			display: inline-block;
+			background-color: powderblue;
+		}
+		#drag{
+			background-color:red;
+		}
+	</style>
+</head>
+<body>
+	<h1 style="color: red;"><center><u>DRAGGABLE EVENTS</u></center></h1>
+	<div id="para"></div>
+	<div class="box" ondrop="dDrop()" ondragover="nDrop()">
+		<div draggable="true" id="drag" ondragstart="dStart()" >Drag Me</div>
+	</div>
+	<div class="box" ondragover="nDrop()" ondrop="dDrop()">
+		
+	</div>
+	<script type="text/javascript">
+		var hold_item;
+		function dStart(){
+			hold_item = event.target;
+		}
+		function nDrop(){
+			event.preventDefault();
+			
+		}
+		function dDrop(){
+			// event.preventDefault();
+			if(event.target.className == "box"){
+
+				event.target.appendChild(hold_item);
+			}
+		}
+	</script>
+</body>
+</html>

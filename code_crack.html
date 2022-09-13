@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>code crack</title>
+	<style type="text/css">
+		h2{
+			display: inline;
+		}
+		button{
+			background-color: skyblue;
+			border-radius: 5px;
+			margin-top: 1em;
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<p>A three digit code has been generated automatically.<br/>Please try to guess the code by entering your guesses in below boxes : <br/></p>
+	<h2>Code : </h2> 
+	<input type="number" name="first" placeholder="first number" id="in1">
+	<input type="number" name="second" placeholder="second number" id="in2">
+	<input type="number" name="third" placeholder="third number" id="in3"><br/>
+	<div id="code"><button type="button" onclick="codeChecker();">Check Code</button></div>
+	<script type="text/javascript" src="code_crack.js"></script>
+</body>
+</html>

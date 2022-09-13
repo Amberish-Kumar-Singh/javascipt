@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>timer</title>
+</head>
+<body>
+
+	<input type="date" onchange="start()">
+	<div id="output"></div>
+
+	<script type="text/javascript">
+		var output = document.querySelector("#output");
+		var cdate,edate,s,m,h,d,t;
+		function start(){
+			var tdate = event.target.valueAsDate;
+			console.log(tdate);
+			cdate = new Date();
+			edate = new Date(tdate);
+			t = window.setTimeout(update,1000);
+			outputupdate();
+		}
+
+		function update(){
+			cdate = new Date();
+			var dur = edate - cdate;
+			s = Math.floor((dur % (60*1000))/1000);
+			m = Math.floor((dur % (60*60*1000))/(1000*60));
+			h = Math.floor((dur % (60*60*1000*24))/(1000*60*60));
+			d = Math.floor(dur/(60*60*1000*24));
+			outputupdate();
+			t = window.setTimeout(update,1000);
+		}
+
+		function outputupdate(){
+			output.innerHTML= d+":"+h+":"+m+ ":"+ s;
+		}
+	</script>
+</body>
+</html>

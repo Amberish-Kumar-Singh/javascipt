@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Game Setup</title>
+	<style type="text/css">
+		.btn{
+			background-color: tomato;
+			border-radius: 12px;
+			text-align: center;
+			color: white;
+			width: 100%;
+			font-weight: bold;
+			font-size: 1.5em;
+		}
+		.btn:hover{
+			background-color: black;
+			cursor: grab;
+		}
+		.gametile{
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<div id="output">Output area</div>
+	<div id="wrapper">
+		<div id="start" class="btn">Start</div>
+		<div id="score"></div>
+		<div id="message"></div>
+		<div id="gameboard"></div>
+	</div>
+
+	<script type="text/javascript">
+	var playLockout = false;
+	var gamePlay = false; 
+	var sb = document.querySelector("#start");
+	var message = document.getElementById("message");
+	var score = document.getElementById("score");
+	var gameboard = document.getElementById("gameboard");
+
+	sb.addEventListener("click",startGame);
+		function startGame(){
+			//hide start button
+			message.innerHTML = "It is working " + gamePlay;
+			if(!gamePlay){
+				gamePlay = true;
+			}
+			//build array for tiles
+			//shuffle arrays
+			//build board
+		}
+	</script>
+</body>
+</html>

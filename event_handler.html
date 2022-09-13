@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>event handler</title>
+	<style type="text/css">
+		#hide{
+			display:none;
+		}
+	</style>
+</head>
+<body>
+	<h1><center><u>Event Handler</u></center></h1><hr>
+	<p>There is a special <em>event</em> object which can respond to any of the possible events that occur and therefore we need not specify the event that occur we can directly use the event object to traverse through different fields and get the values. </p> <br/>
+	
+	<form>
+		<input type="text" id="in1" placeholder="first name" onkeypress="checkInput()" onpaste="return false">
+		<input type="text" id="in2" placeholder="last name" onkeypress="checkInput()">
+		<input type="number" name="phone" placeholder="phone number" onkeypress="checkInputC()">
+		<input type="button" onclick="getValue()" value="click me">
+	</form>
+	<div id="welcome">
+		
+	</div>
+	<div id="background">
+		<br/><button onclick = "changeBg()">Change background</button>
+		<div id="hide">
+			<p>Choose the background color from below : <br/></p>
+			<input type="button" name="yellow" style="background-color: yellow; border-radius : 100%;" onclick="changeColor(this)">
+			<input type="button" name="blue" style="background-color: blue;border-radius : 100%;" onclick="changeColor(this)">
+			<input type="button" name="powderblue" style="background-color: powderblue;border-radius : 100%;" onclick="changeColor(this)">
+			<input type="button" name="black" style="background-color: black;border-radius : 100%;" onclick="changeColor(this)">
+			<input type="button" name="green" style="background-color: green;border-radius : 100%;" onclick="changeColor(this)">
+			<button style="margin-left: 10rem;" onclick="hide()">OK</button>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function getValue(){
+		 	var name = event.target.parentElement[0].value + " " + event.target.parentElement[1].value;
+		 	document.getElementById("welcome").innerHTML = "Welcome " + name ;
+		}
+		function changeColor(t){
+			document.querySelector("body").style.backgroundColor=t.name;
+		}
+		function changeBg(){
+			document.getElementById("hide").style.display="block";
+		}
+		function hide(){document.getElementById('hide').style.display='none'}
+		function checkInput(){
+			document.getElementById("welcome").innerHTML = event.key;
+		}
+		function checkInputC(){
+			document.getElementById("welcome").innerHTML = event.target.value;
+		}
+	</script>
+</body>
+</html>

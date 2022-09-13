@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Countdown timer</title>
+</head>
+<body>
+	<p>Please set your date in below input field</p>
+	<div >
+		<input type="date"  id="setdate" onchange="startCounter()">
+	</div>
+
+	<div id="output">
+		
+	</div>
+
+	<script type="text/javascript">
+		var output = document.getElementById("output");
+		var d,h,m,s,cdate,sdate,duration;
+		function startCounter(){
+			cdate = new Date();
+			sdate = new Date(document.querySelector("#setdate").valueAsDate);
+			update();
+		}
+
+		function update(){
+			cdate = new Date(); 
+			duration = (sdate - cdate); 
+			s = Math.floor((duration / 1000)%60);
+			s<10 ? (s="0"+s) : s=s;
+			m = Math.floor((duration / (1000 * 60))%60);
+			m<10 ? (m="0"+m) : m=m;
+			h = Math.floor((duration / (1000 * 60 *60))%24);
+			h<10 ? (h="0"+m) : h=h;
+			d = Math.floor(duration/(1000*60*60*24));
+			output.innerHTML = "<br/>" + d + " day " + h + " hr " + m + " min " + s + " sec ";
+			
+			window.setTimeout(update, 1000);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>random color</title>
+	<style type="text/css">
+		#tb{
+			margin:auto;
+			width: 100%;
+			font-weight: bold;
+		}
+		td{
+			text-align:  center;
+		}
+	</style>
+</head>
+<body onload="start()">
+		<table id="tb">
+		<tr class="color"><td>row 1</td></tr>
+		<tr class="color"><td>row 2</td></tr>
+		<tr class="color"><td>row 3</td></tr>
+		<tr class="color"><td>row 4</td></tr>
+		<tr class="color"><td>row 5</td></tr>
+		<tr class="color"><td>row 6</td></tr>
+		<tr class="color"><td>row 7</td></tr>
+		<tr class="color"><td>row 8</td></tr>
+		<tr class="color"><td>row 9</td></tr>
+		<tr class="color"><td>row 10</td></tr>
+		<tr class="color"><td>row 11</td></tr>
+		</table>
+
+	<script type="text/javascript">
+		var col_list=["purple","pink","yellow","blue","powderblue","green","red","tomato","grey","orange"];
+		var c;
+		var cell=document.querySelectorAll(".color");
+		function start(){
+			setInterval(rando,2000);
+		}
+		function rando(){
+			for(var x=0;x<cell.length;x++){
+				c=col_list[Math.floor(Math.random()*col_list.length)];
+				cell[x].firstElementChild.style.backgroundColor=c;
+				cell[x].firstElementChild.innerText=c;
+			}
+		}
+	</script>
+</body>
+</html>

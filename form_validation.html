@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form validation</title>
+	<style type="text/css">
+		input{
+			margin-top: 1rem;
+		}
+	</style>
+</head>
+<body>
+	<h1><center>FORM VALIDATION</center></h1><br>
+	<form name="form" method="get" action="confirm_submission.html" onsubmit="return formCheck(this)">
+		<input type="text" name="first_name" placeholder="first name"><br>
+		<input type="text" name="last_name" placeholder="last name"><br>
+		<input type="number" name="phone_number" placeholder="phone"><br>
+		<input type="submit" name="submit" value="submit"><br>
+	</form>
+	<script type="text/javascript">
+		var t;
+		 function formCheck(t){
+			 if(t.first_name.value == ""){
+			 	alert("first name is missing");
+			 	return false;
+			 }
+			 else if(t.last_name.value == ""){
+				 	alert("last name is missing");
+				 	return false;
+			 }
+			 else if(t.phone_number.value == ""){
+				 	alert("phone number is missing");
+				 	return false;
+			 }
+		 }
+	</script>
+</body>
+</html>

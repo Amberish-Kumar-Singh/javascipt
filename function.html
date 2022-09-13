@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>function</title>
+	<style type="text/css">
+		input{
+			display: block;
+		}
+		button{
+			background-color: skyblue;
+			border-radius: 2px; 
+		}
+	</style>
+</head>
+<body>
+	<h1 style="color:red;text-decoration: underline;"><center>function in js</center></h1>
+	<p>Enter the number whose table you want to know</p><br/>
+	<input type="number" name="num" placeholder="Enter number" id="numb"><br/>
+	<button type="button" onclick="table();">Get table</button><br/>
+	<button type="button" onclick="clearAll();">Reset</button><br/>
+	<div id="tab"></div>
+	<script type="text/javascript">
+		var c = document.getElementById('tab');
+		function table(){
+		var n = document.getElementById("numb").value;
+		for (var i = 1 ; i <= 10 ; i++) {
+			c.innerHTML += n + " * " + i + "= " + n*i + "<br/>";
+	}
+	c.innerHTML+="<br/>"
+}
+		function clearAll(){
+			c.innerHTML = "";
+		}
+		
+	</script>
+</body>
+</html>
